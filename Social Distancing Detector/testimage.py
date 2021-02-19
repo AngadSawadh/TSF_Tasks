@@ -6,7 +6,7 @@ from utils.params import MODEL_DIR
 from scipy.spatial import distance as dist
 import os
 
-img = cv.imread(r"G:\TSF_Tasks\Social Distancing Detector\calibratecam.jpg")
+img = cv.imread(r"G:\TSF_Tasks\Social Distancing Detector\samples\calibratecam.jpg")
 (H,W) = img.shape[:2]
 
 pts1 = np.float32([[int(0.22*W),int(0.44*H)],[int(0.36*W),int(0.42*H)],[int(W),int(0.8*H)],[int(0.7*W),int(H)]])
@@ -68,4 +68,6 @@ cv.putText(img,text,(0,0),cv.FONT_HERSHEY_SIMPLEX,0.85,(255,0,0),2)
 
 cv.imshow("Image",img)
 cv.imshow("Top_view",top_view)
+cv.imwrite(r"img1.jpg",img)
+cv.imwrite(r"img2.jpg",top_view)
 cv.waitKey(0)
